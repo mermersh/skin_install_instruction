@@ -1,0 +1,423 @@
+:root {
+  --bg: #7cb0e4;
+  --card: rgba(0, 0, 0, 0.06);
+  --card2: rgba(255, 255, 255, 0.08);
+  --text: rgb(255, 255, 255);
+  --muted: rgba(255, 255, 255, 0.9);
+  --border: rgba(255, 255, 255, 0.434);
+  --shadow: 0 12px 40px rgba(50, 45, 100, 0.35);
+  --radius: 20px;
+  --pad: 32px;
+  --max: 1100px;
+  --mono: --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Cascadia Mono",
+        "Noto Sans Mono CJK JP", "Noto Sans Mono", "JetBrains Mono", "Source Code Pro",
+        "Liberation Mono", "Courier New", monospace;
+}
+
+:root[data-theme="light"] {
+  --bg: #f6f7fb;
+  --card: rgba(0, 0, 0, 0.04);
+  --card2: rgba(0, 0, 0, 0.06);
+  --text: rgba(10, 12, 16, 0.92);
+  --muted: rgba(10, 12, 16, 0.65);
+  --border: rgba(10, 12, 16, 0.1);
+  --shadow: 0 12px 40px rgba(10, 12, 16, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  /* font-family: system-ui, -apple-system, "Kaisei Decol", Roboto, "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif; */
+  font-family: "Noto Sans JP", sans-serif, system-ui, -apple-system;
+  background: radial-gradient(1200px 600px at 10% -10%, rgb(107, 255, 250), transparent 60%),
+    radial-gradient(900px 500px at 100% 0%, rgba(255, 255, 255, 0.594), transparent 60%), var(--bg);
+    background-attachment:fixed;
+  color: var(--text);
+}
+
+html {
+  overflow-y:auto;
+  scroll-behavior:smooth;
+  font-family: "Noto Sans JP", sans-serif, system-ui, -apple-system;
+}
+
+hr {
+  border: none;
+  border-top: 3px solid var(--border);
+  margin: 12px 0;
+}
+
+/* ===== Scrollbar (Chrome/Edge/Safari) ===== */
+*::-webkit-scrollbar{
+  width: 12px;
+  height: 12px;
+}
+
+*::-webkit-scrollbar-track{
+  background: transparent;           /* 背景は馴染ませる */
+}
+
+*::-webkit-scrollbar-thumb{
+  background: rgba(255,255,255,0.18); /* つまみを薄く */
+  border: 3px solid transparent;      /* 太さ調整 + 角丸を綺麗に */
+  background-clip: padding-box;
+  border-radius: 999px;
+}
+
+*::-webkit-scrollbar-thumb:hover{
+  background: rgba(255,255,255,0.28);
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+
+/* ===== Scrollbar (Firefox) ===== */
+html{
+  scrollbar-width:none;
+  scrollbar-gutter: calc();
+  scrollbar-color: rgba(255, 255, 255, 0.63) transparent;
+}
+
+/* ===== Light theme tuning ===== */
+:root[data-theme="light"] *::-webkit-scrollbar-thumb{
+  background: rgba(0,0,0,0.20);
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+:root[data-theme="light"] *::-webkit-scrollbar-thumb:hover{
+  background: rgba(0,0,0,0.30);
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+:root[data-theme="light"] html{
+  scrollbar-color: rgba(0,0,0,0.28) transparent;
+}
+
+
+.container {
+  width: min(var(--max), calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+  background: rgba(0, 0, 0, 0.18);
+}
+:root[data-theme="light"] .header {
+  background: rgba(255, 255, 255, 0.65);
+}
+
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 14px 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+.logo {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, rgba(124, 92, 255, 0.35), rgba(0, 200, 255, 0.25));
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 1000;
+  margin: 0;
+  font-family: "Noto Sans JP", sans-serif, system-ui, -apple-system;
+}
+.sub {
+  margin: 2px 0 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.header-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+main {
+  padding: 18px 0 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.card {
+  font-weight: 600;
+  grid-column: span 12;
+  background: linear-gradient(180deg, var(--card), transparent 160%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--pad);
+  box-shadow: var(--shadow);
+}
+
+@media (min-width: 820px) {
+  .grid .card:nth-child(1) {
+    grid-column: span 6;
+  }
+  .grid .card:nth-child(2) {
+    grid-column: span 3;
+  }
+  .grid .card:nth-child(3) {
+    grid-column: span 3;
+  }
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.row-right {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+h2 {
+  margin: 0 0 10px 0;
+  font-weight: 600;
+  font-size: 36px;
+}
+h3 {
+  margin: 0 0 8px 0;
+  font-size: 24px;
+}
+p {
+  margin: 10px 0;
+}
+.muted {
+  color: var(--muted);
+}
+.hint {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.list {
+  margin: 0px 0;
+  padding-left: 18px;
+  color: var(--text);
+}
+.list li {
+  margin: 30px 0;
+}
+
+.chip {
+  display: inline-block;
+  padding: 10px 8px;
+  border-radius: 16px;
+  border: 2px solid var(--border);
+  background: var(--card2);
+  font-size: 14px;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--card2);
+  color: var(--text);
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.12s ease, background 0.12s ease;
+}
+.btn:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.206);
+}
+:root[data-theme="light"] .btn:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+.btn:active {
+  transform: scale(1.0);
+}
+.btn.wide {
+  width: 100%;
+}
+.btn.ghost {
+  background: transparent;
+}
+
+.search {
+  width: min(360px, 46vw);
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  outline: none;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0 12px;
+}
+.tab {
+  font-size: 18px;
+  font-weight: 600;
+  padding: 9px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+.tab.active {
+  background: rgba(255, 255, 255, 0.206);
+}
+.tab:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.206);
+}
+
+/* ===== Panels fade switch (fixed) ===== */
+.panels{
+  margin-top: 6px;
+  position: relative;
+  transition: height 200ms ease;
+}
+
+/* inset:0 をやめる（下まで伸びないようにする！） */
+.panel{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity 280ms ease, transform 280ms ease, visibility 0ms linear 280ms;
+}
+
+.panel.active{
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  visibility: visible;
+  transition: opacity 280ms ease, transform 280ms ease, visibility 0ms;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .panels{ transition: none; }
+  .panel{ transition: none; transform: none; }
+}
+
+
+
+.steps details {
+  will-change: height;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 10px 12px;
+  background: linear-gradient(180deg, var(--card2), transparent 140%);
+  margin: 10px 0;
+}
+.steps summary {
+  cursor: pointer;
+  font-weight: 650;
+  margin: -2px 0 6px;
+  font-size: 30px;
+}
+.steps ol {
+  margin: 8px 0 0 18px;
+}
+.steps ol li {
+  font-size: 18px;
+  margin: 20px;
+}
+.steps ol li p {
+  font-size: 16px;
+  margin: 8px;
+}
+.steps ol li a {
+  color:rgb(34, 76, 145);
+}
+
+.steps li {
+  margin: 6px 0;
+}
+.steps ul {
+  margin: 8px 0 0 18px;
+}
+.steps ul li {
+  margin: 6px 0;
+}
+
+.callout {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: radial-gradient(700px 180px at 20% 20%, rgba(124, 92, 255, 0.25), transparent 70%),
+    radial-gradient(650px 200px at 90% 0%, rgba(0, 200, 255, 0.18), transparent 65%), var(--card);
+}
+
+code {
+  margin: 8px 0 0;
+  padding: 4px;
+  border-radius: 8px;
+  border: 2px solid rgba(0, 0, 0, 0.236);
+  background: rgba(72, 119, 150, 0.663);
+  overflow: auto;
+  font-family: var(--mono);
+  font-size: 16px;
+  line-height: 2;
+  white-space: pre-wrap;
+}
+:root[data-theme="light"] .code {
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.footer {
+  margin-top: 18px;
+  margin-bottom: 18px;
+  text-align: center;
+}

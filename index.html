@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>スキンの導入方法 | Minecraft Skin Install Instruction</title>
+  <meta name="description" content="Minecraftスキンの導入方法を、端末別に分かりやすくまとめたページです。" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="brand">
+        <!-- <div class="logo" aria-hidden="true"></div> -->
+        <div>
+          <h1>4Dスキンの導入方法</h1>
+          <p class="sub"></p>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <!-- <button class="btn ghost" id="toggleTheme" type="button" aria-label="テーマ切り替え">Dark / Light</button> -->
+        <p class="chip">By めるん</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- いろいろ -->
+    <section class="grid">
+      <article class="card">
+        <h2>ファイルの確認</h2>
+        <p>ファイルを受け取ったら、中身を確認してください。<br>4Dスキンをご依頼いただいた場合のみ、スキンパック用フォルダが含まれます。</p>
+        <p>受け取ったファイルの中にフォルダ</p>
+        <ul class="list">
+          <li> <span class="chip">スキン(Windows専用)</span> </li>
+          <li> <span class="chip">スキン(手動置き換え用・iOS,Android,Windows対応)</span> </li>
+        </ul>
+        <p>の２つがあるか確認してください。</p>
+      </article>
+
+      <article class="card">
+        <h2 id="download">リンク</h2>
+        <p class="muted">スキンパック導入時に使うリンクです。</p>
+        <div class="stack">
+          <a class="btn wide" href="https://oasoobi.net/downloads/skininjector" target="_blank"><b>Skin Injectorダウンロードサイト</b></a>
+          <a class="btn wide" href="https://youtu.be/C3bLRSTO4hM?si=Sp44V3XLoInoyBdy" target="_blank"><b>iOS用解説動画 (nFr1skさま)</b></a>
+          <p class="hint">※リンクが切れている場合はめるんまで教えてください。</p>
+        </div>
+      </article>
+
+    </section>
+
+    <div class="divider">
+        <br>
+    </div>
+
+    <!-- 注意事項 -->
+    <article class="card">
+        <h2>注意事項</h2>
+        <ul class="list">
+          <li>4Dスキンが使用可能な端末は、<br> <p class = "chip"> Windows </p> <p class = "chip">iPhone</p> <p class = "chip">iPad</p> <p class = "chip">Android</p> <br>に限られます。
+            <p class="muted">※その他端末・OSで使用する方法があるかもしれませんが、めるんは対応できません。<br> ※めるんはAndroid端末を持っていないため、Androidでの動作確認はできかねます。</p>
+          </li>
+          <li>4Dスキンは、マーケットプレイスにて無料で配布されている『1周年記念スキンパック』を置き換える形で実装します。導入後は『1周年記念スキンパック』は使用できなくなりますのでご了承ください。（元に戻すことは可能です）</li>
+          <li>一部のサーバーでは、サーバー側の設定により使用できない場合があります。また、特定の環境では使用できない場合があります。</li>
+          <li>4Dスキンの導入は公式でサポートされていません。導入に伴って不利益が生じた場合やその他のトラブルに対して、めるんは一切の責任を負いかねます。</li>
+          <li>基本的には初回に一度導入するだけですが、アップデートなどで再導入が必要になる場合があります。その場合も、初回導入時と同じ手順で進めてください。</li>
+          <li>今後のマインクラフト統合版のアップデート・仕様変更等により、4Dスキンが使用できなくなる可能性があります。Microsoftさんの気分次第なので、お許しください。</li>
+          <li>導入方法についての質問やサポートは、めるんまでご連絡ください。可能な限りお答えします。</li>
+        </ul>
+    </article>
+
+    <div class="divider">
+        <br>
+    </div>
+
+    <!-- 端末ごとの説明 -->
+    <section class="card">
+      <div class="row">
+        <h2>導入方法</h2>
+        <div class="row-right">
+        <!--   <input class="search" id="search" type="search" placeholder="例：iPhone / Android / Windows / Java" /> -->
+        </div>
+      </div>
+      <h3 class="muted">※導入したい端末を選んでください</h3>
+
+      <div class="tabs" role="tablist" aria-label="platform tabs">
+        <button class="tab active" role="tab" aria-selected="true" data-tab="bedrock-pc">Windows</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="bedrock-mobile">iPhone / iPad / Android</button>
+      </div>
+
+      <div class="panels">
+        <!-- Bedrock PC -->
+        <section class="panel active" role="tabpanel" id="bedrock-pc" data-keywords="bedrock windows pc win 統合版">
+          <h2>Windows</h2>
+
+          <div class="steps">
+            <details open>
+              <summary>方法A：<strong>Skin Injectorを使用する（おすすめ）</strong> </summary>
+              <hr>
+              <ol>
+                <li>このページの「リンク」から <b>Skin Injectorダウンロードサイト</b> へアクセスし、最新版の <b>Skin Injector</b> をダウンロードする</li>
+                <li>ダウンロードした <b>Skin Injector</b> を分かりやすい場所（デスクトップ等）に置く</li>
+                <li>Skin Injectorの <a href="https://oasoobi.net/downloads/skininjector/guide" target="_blank">使い方ページ</a> を参考に導入を進める<br>
+                    <p class="chip">※Step1でダウンロードしておくスキンパックは『1周年記念スキンパック』です。</p><br>
+                    <p class="chip">※Step5では、お渡ししたファイルの中の <code>スキン(Windows専用)</code> をフォルダごとドラッグ＆ドロップし、下のスキンパック一覧の中から『1st Birthday Skin Pack』を選択したうえで、Injectボタンをクリックしてください。</p>
+                </li>
+
+                <li>Minecraft統合版を起動し、スキン選択画面で1周年記念スキンパックが正常に置き換わっていればOK!<br>そのまま選んで使えます (*>ω<)b</li>
+              </ol>
+
+              <hr>
+              <div class = "callout">
+                <h3>うまくいかない場合</h3>
+                <p>うまくいかない場合は以下の手順を試してください。
+                    <ol>
+                        <li>方法Bの『Windows版でskin_packsフォルダの場所にアクセスする方法』に従って、skin_packsフォルダの場所にアクセスする</li>
+                        <li><code>premium_cache/skin_packs</code> フォルダの中身をすべて消す</li>
+                        <li>統合版を再起動し、スキン選択画面に1周年記念スキンパックがあることを 必ず 確認する</li>
+                        <li>統合版を閉じて、もう一度導入の手順を行う</li>
+                    </ol>
+              </div>
+            </details>
+
+            <details>
+              <summary>方法B：<strong>手動で導入する</strong></summary>
+              <hr>
+              <ol>
+                <li>このページの「リンク」から <b>iOS用解説動画</b> へアクセスする</li>
+                <li>手順に沿って進める<br>
+                    ファイルをコピーする作業の前に、統合版を閉じてください。<br>
+                    <p class="chip">※動画ではiOSで操作していますが、同様の手順でWindowsでも導入が可能です。</p>
+                    <p class="chip">※ダウンロードしておくスキンパックは『1周年記念スキンパック』です。</p>
+                    <p class="chip">※コピーするスキンパックは、お渡ししたファイルの中の <code>スキン(手動置き換え用・iOS,Android,Windows対応)</code> です。</p>
+                    <hr>
+                    <p class="list">
+                        <h3>Windows版でskin_packsフォルダの場所にアクセスする方法</h3>
+                        <ol>
+                            <li>デスクトップでWinキーとRキーを同時に押す</li>
+                            <li>『ファイル名を指定して実行』が開いたら、 <code>%appdata%</code> と入力してEnterキーを押す</li>
+                            <li>開いたフォルダの中にある <code>Minecraft Bedrock</code> フォルダを開く</li>
+                            <li><code>premium_cache</code> フォルダを開く</li>
+                            <li>ここに <code>skin_packs</code> フォルダがあるはず！</li>
+                        </ol>
+                    </p>
+                    <hr>
+                </li>
+                <li>Minecraft統合版を再起動し、スキン選択画面で1周年記念スキンパックが正常に置き換わっていればOK!<br>そのまま選んで使えます (*>ω<)b</li>
+              </ol>
+
+              <hr>
+              <div class = "callout">
+                <h3>うまくいかない場合</h3>
+                <p>うまくいかない場合は以下の手順を試してください。
+                    <ol>
+                        <li><code>premium_cache/skin_packs</code> フォルダの中身をすべて消す</li>
+                        <li>統合版を再起動し、スキン選択画面に1周年記念スキンパックがあることを 必ず 確認する</li>
+                        <li>統合版を閉じて、もう一度導入の手順を行う</li>
+                    </ol>
+              </div>
+            </details>
+          </div>
+
+          <!-- <div class="callout">
+            <b>ポイント：</b> PNGの取り込みに失敗する場合は、画像の解像度（例：64×64）と透過を確認してください。
+          </div> -->
+        </section>
+
+        <!-- Bedrock Mobile -->
+        <section class="panel" role="tabpanel" id="bedrock-mobile" data-keywords="bedrock iphone ios android mobile スマホ 統合版">
+          <h2>iPhone / iPad / Android</h2>
+
+          <div class="steps">
+            <details open>
+              <summary><strong>手動で導入する</strong></summary>
+              <hr>
+              <ol>
+                <li>このページの「リンク」から <b>iOS用解説動画</b> へアクセスする</li>
+                <li>手順に沿って進める<br>
+                    ファイルをコピーする作業の前に、統合版を閉じてください。<br>
+                    <p class="chip">※動画ではiPhoneで操作していますが、同様の手順でiPadでも導入が可能です。Androidでも恐らく同様にできるはずです。</p>
+                    <p class="chip">※ダウンロードしておくスキンパックは『1周年記念スキンパック』です。</p>
+                    <p class="chip">※コピーするスキンパックは、お渡ししたファイルの中の <code>スキン(手動置き換え用・iOS,Android,Windows対応)</code> です。</p>
+                </li>
+                <li>Minecraft統合版を再起動し、スキン選択画面で1周年記念スキンパックが正常に置き換わっていればOK!<br>そのまま選んで使えます (*>ω<)b</li>
+              </ol>
+
+              <hr>
+              <div class = "callout">
+                <h3>うまくいかない場合</h3>
+                <p>うまくいかない場合は以下の手順を試してください。
+                    <ol>
+                        <li><code>premium_cache/skin_packs</code> フォルダの中身をすべて消す</li>
+                        <li>統合版を再起動し、スキン選択画面に1周年記念スキンパックがあることを 必ず 確認する</li>
+                        <li>統合版を閉じて、もう一度導入の手順を行う</li>
+                    </ol>
+              </div>
+              
+            </details>
+          </div>
+
+          <!-- <div class="callout">
+            <b>ポイント：</b> スキンが黒くなる/透明な箇所がおかしい場合、PNGの透過設定やフォーマットが原因のことがあります。
+          </div> -->
+        </section>
+
+        <!-- Bedrock Console -->
+        <section class="panel" role="tabpanel" id="bedrock-console" data-keywords="bedrock switch ps xbox console 統合版">
+          <h2>統合版（Switch / PlayStation / Xbox）</h2>
+
+          <div class="steps">
+            <details open>
+              <summary>大事：多くの場合、端末単体ではPNG取り込みができません</summary>
+              <ul>
+                <li>コンソール版は「ローカル画像からのスキン読み込み」が制限されることがあります</li>
+                <li>基本は <b>PC/スマホ（統合版）で取り込み → Microsoftアカウントで同期</b> が安定です</li>
+              </ul>
+            </details>
+
+            <details>
+              <summary>おすすめ手順（同期ルート）</summary>
+              <ol>
+                <li>PC または スマホの統合版で <b>skin.png</b> を取り込んで適用</li>
+                <li>同じ <b>Microsoftアカウント</b> で Switch/PS/Xbox 側もログイン</li>
+                <li>更衣室を開いてスキンが出るか確認（反映に時間がかかる場合あり）</li>
+              </ol>
+            </details>
+
+            <details>
+              <summary>それでも出ない場合</summary>
+              <ul>
+                <li>一度ゲームを再起動</li>
+                <li>サインアウト → 再サインイン</li>
+                <li>更衣室のキャッシュが更新されるまで待つ（数分〜）</li>
+              </ul>
+            </details>
+          </div>
+
+          <div class="callout">
+            <b>メモ：</b> 端末・バージョンによって挙動が違うので、状況が分かれば案内文をあなた用に最適化できます。
+          </div>
+        </section>
+
+        <!-- Java -->
+        <section class="panel" role="tabpanel" id="java" data-keywords="java launcher pc スキン 公式サイト">
+          <h3>Java版（PC）</h3>
+
+          <div class="steps">
+            <details open>
+              <summary>公式プロフィールで変更する（基本）</summary>
+              <ol>
+                <li><b>skin.png</b> を保存</li>
+                <li>Minecraft Launcher の <b>Skins</b> から追加、または公式プロフィールページでアップロード</li>
+                <li>モデル（スリム/クラシック）を選んで保存</li>
+              </ol>
+            </details>
+
+            <details>
+              <summary>注意</summary>
+              <ul>
+                <li>Java版はオンラインプロフィール反映に少し時間がかかることがあります</li>
+                <li>非公式ランチャー/オフライン環境は別手順になる場合があります</li>
+              </ul>
+            </details>
+          </div>
+
+          <div class="callout">
+            <b>ポイント：</b> 受け取ったスキンが「統合版向け仕様」だと、Javaで見え方が変わることがあります。
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- Copyable template message -->
+    <!-- <section class="card">
+      <div class="row">
+        <h2>依頼者に送るメッセージ（テンプレ）</h2>
+        <button class="btn ghost" id="copyTemplate" type="button">コピー</button>
+      </div>
+
+      <pre class="code" id="templateText">スキンのお渡しです！
+このページの「配布ファイル」から skin.png を保存して、端末に合わせた手順で導入してください。
+うまく反映されない場合は、使っている端末（例：iPhone / Windows / Switch）を教えてください！</pre>
+
+      <p class="hint">※テンプレ文は script.js で自由に編集できます。</p>
+    </section> -->
+    
+
+    <footer class="footer">
+      <p class="muted">© めるんさんのページ</p>
+    </footer>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>
