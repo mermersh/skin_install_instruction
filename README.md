@@ -6,4 +6,4 @@
 - Source: Deploy from a branch
 - Branch: main / (root)
 
-公開URLが出たらOK
+26/01/09 一旦完成
